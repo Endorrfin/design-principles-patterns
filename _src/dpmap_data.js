@@ -552,6 +552,8 @@ const SUBFOLDER = {
   coupling: 'Principles/Coupling_and_OO_Design', grasp: 'Principles/GRASP',
   presentation: 'Architectural/Presentation', data: 'Architectural/Data_and_persistence',
   composition: 'Architectural/Composition',
+  creational: 'GoF_Design_Patterns/Creational', structural: 'GoF_Design_Patterns/Structural',
+  behavioral: 'GoF_Design_Patterns/Behavioral',
 };
 
 // Deep-dive links are AUTO-DISCOVERED at build time: if a concept's PDF exists at
@@ -562,7 +564,11 @@ NODES.forEach(n => {
   n.sub = SUBMAP[n.id] || n.fam;
   n.group = SUBOF[n.sub].group;
   if (n.group === 'gof') {
-    n.pdf = `./GoF_Design_Patterns/${cap(n.sub)}/${String(n.pdf).split('/').pop()}`;
+    const sub = cap(n.sub), oldFile = String(n.pdf).split('/').pop();
+    const newAbs = pathlib.join(__dirname, '..', 'GoF_Design_Patterns', sub, `${n.id}_deep-dive_en.pdf`);
+    n.pdf = fs.existsSync(newAbs)
+      ? `./GoF_Design_Patterns/${sub}/${n.id}_deep-dive_en.pdf`   // new gold deep-dive (once rendered)
+      : `./GoF_Design_Patterns/${sub}/${oldFile}`;                // fallback: existing GoF poster
   } else {
     const folder = SUBFOLDER[n.sub];
     const exists = folder && fs.existsSync(pathlib.join(__dirname, '..', folder, `${n.id}_deep-dive_en.pdf`));

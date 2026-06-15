@@ -39,7 +39,7 @@ const sub = SUB[n.sub], group = GRP[n.group], acc = sub.accent;
 // CHANGED: hero kind word is data-driven — architectural concepts read as "Pattern",
 // principles stay "Principle"; per-concept override via dd.kindWord. Default preserves
 // existing principle/grasp/srp output.
-const kindWord = dd.kindWord || (group.id === 'architectural' ? 'Pattern' : 'Principle');
+const kindWord = dd.kindWord || (group.id === 'principle' ? 'Principle' : 'Pattern');
 // CHANGED: page-3 refactor-arrow label is per-concept; original SRP label kept as fallback
 // so principle files that don't set it render exactly as before.
 const refactorLabel = dd.refactorLabel || '↓ REFACTOR BY ACTOR';
