@@ -29,6 +29,8 @@ a{color:var(--accent2)}
 .search:focus{border-color:var(--accent)}
 .search::placeholder{color:var(--tx3)}
 .count{font-size:12px;color:var(--tx3);white-space:nowrap}
+.dpmap-embedded .bar{justify-content:flex-end;padding-top:9px;padding-bottom:9px}
+.dpmap-embedded .brand{display:none}
 
 .families{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line)}
 .fam{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--line);
@@ -194,3 +196,8 @@ window.addEventListener('hashchange', () => {
 });
 
 document.head.insertAdjacentHTML('beforeend', '<style>' + STYLE + '</style>');
+
+// Inside the index.html tabs (iframe), the tab bar already shows the brand —
+// hide the map's own brand to avoid the duplicate title. Standalone keeps it.
+try { if (window.self !== window.top) document.documentElement.classList.add('dpmap-embedded'); }
+catch (e) { document.documentElement.classList.add('dpmap-embedded'); }
