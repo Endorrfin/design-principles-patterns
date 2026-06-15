@@ -1,0 +1,44 @@
+DESIGN PRINCIPLES & PATTERNS — INTERACTIVE MAP
+==============================================
+Self-contained folder: everything lives here, nothing links outside it.
+
+OPEN  (double-click, any browser — no server needed)
+  dpmap_hybrid.html   Searchable, filterable, collapsible card dashboard.
+                      Best for daily reference and for clean screenshots.
+  dpmap_tree.html     Pan/zoom mind-map (root -> group -> sub-group -> pattern).
+                      Opens collapsed: click a group, then a sub-group, then a
+                      pattern. Best for the big picture / a visual share.
+
+CONTENT — 40 concepts in 3 groups / 9 sub-groups
+  Principles            SOLID . Simplicity & clarity . Coupling & OO design
+  GoF Design Patterns   Creational . Structural . Behavioral
+  Architectural         Presentation . Data & persistence . Composition
+Click any concept: intent . structure/roles . use when . avoid when .
+pros/cons . code sketch . one interview Q&A . see-also links . deep-dive button.
+
+FOLDER LAYOUT
+  dpmap_hybrid.html, dpmap_tree.html        the two maps (generated)
+  POSTING_GUIDE.txt                         this file
+  Principles/, GoF_Design_Patterns/,       deep-dive material, by sub-group
+    Architectural/
+  _src/                                     source kit (edit + rebuild here)
+  _arhive/                                  earlier versions
+
+DEEP-DIVE BUTTON
+  GoF patterns -> ./GoF_Design_Patterns/<Creational|Structural|Behavioral>/gof_*.pdf
+  Principle & architectural deep-dives are pending (per-concept) and show
+  "coming soon" until added. To wire one: drop the file into the matching
+  sub-folder and set that node's `pdf` in _src/dpmap_data.js, then rebuild.
+
+SHARING ON LINKEDIN  (it can't host live HTML)
+  Ready-made assets are in ./linkedin/ :
+    dpmap_hero_en.png    1080x1350 hero poster (rendered @2x) — image post.
+    dpmap_reveal_en.mp4  ~8s staged reveal of the taxonomy — video post.
+  Highest fidelity: screen-record the live dpmap_tree.html / dpmap_study.html
+  on your Mac and post that clip (shows the real, interactive tool).
+  Regenerate: _src/dpmap_hero.js (satori) renders the frames; the ffmpeg step
+  is in linkedin/anim.txt. Edit content once in _src/dpmap_data.js.
+
+REGENERATE / EDIT  (content lives in ONE file: _src/dpmap_data.js)
+  cd _src && node dpmap_build.js     # rebuilds both HTML into this folder
+  cd _src && node _check.js          # validation (needs: npm i jsdom)

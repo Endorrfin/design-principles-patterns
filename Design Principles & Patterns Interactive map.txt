@@ -1,0 +1,136 @@
+🎓 Design Principles & Patterns Interactive map · 49 concepts
+
+Design Principles & Patterns Interactive map
+
+Ціль: навчання, швидке занурення, розуміння концепцій та сфери застосування.
+Рівень: Senior / Principal Engineer
+Не виключаю, що поділюсь в linkedin.
+Мова: English
+Працюй із директорією 2026-06-15 Design Principles & Patterns (contribution/06 June/2026-06-15 Design Principles & Patterns). Результати роботи клади сюди ж.
+Необхідно продумати і запропонувати план створення Interactive map Design Principles and Patterns.
+Interactive map Design Principles and Patterns повинна мати:
+1. Всі концепції, які бачиш на "Design Principles & Patterns.jpeg", але не обмежуючись лише ними.
+2. Відмінний дизайн та user friendly interfaces.
+3. Clickable по кожному principles -> розкриття деталізації по кожному.
+4. Пропонуй свої поради та рекомендації
+
+Я очікую, що перед реалізацією ти запропонуєш план (схему) майбутньої Interactive map, де ми разом узгодимо макет (схему) рівень деталізації, дизайн, інше.
+
+Як приклади, можеш глянути інші директорії в "contribution”, for example: “Node-js core concepts”, “Examples of visualizations”, "2026-06-12 patterns DDD, event-driven, SOLID, CQRS", "2026-06-15 Design Principles & Patterns", але не обмежуйся лише ними. Я очікую best practice & best approach. Будь-які твої ідеї рекомендації, підходи - можеш пропонувати. Можеш спочатку скласти план, представити деталі, поділитись підходом, тощо.
+
+Пропоную крок за кроком підготувати план, погодити деталі, перед реалізацією?
+
+
+-------------------------
+
+I. Which layout architecture do you want for the map?
+1 Hybrid: overview + cards + drawer
+2 Card dashboard only
+3 Tree / mind-map canvas
+
+II. How broad should the content scope be?
+1 Complete canonical set (~45)
+2 JPEG set only (~28)
+3 Canonical + surface your other series
+
+III. How much detail opens when you click a node?
+1 Structured card
+2 Concise
+3 Deep
+
+IV. Which theme for the final build?
+1 Dark + family colours
+2 Dark + purple accent
+3 Dark + orange accent
+
++++++
+After opening both — which layout should I polish into the final?
+1 Hybrid (cards + filter)
+2 Tree / mind-map
+3 Keep and polish both
+4 Merge into one
+
+Do you want LinkedIn-ready assets generated from the map?
+1 Not yet — refine first
+2 Yes — hero PNG + MP4 walkthrough
+3 Just a static hero PNG
+
++++++
+What would you like me to refine next on the map? (pick any, or none)
+Tree starts collapsed
+“See also” cross-links
+README + posting guide
+Light-theme variant
+
+===
+How do you want the LinkedIn pack produced?
+1 Designed hero + reveal MP4
+2 Designed hero PNG only
+3 Hero PNG + screen-record guide
+4 Skip the LinkedIn pack
+
+
+--------------------------
+
+I want to see them and compare.
+I like all the options. I don't want to limit you in this.
+---
+Regarding the block: "Principles" I would like this block to have an additional level of nesting / visual design. SOLID and everything possible should have separate sections. Now all 11 are in a heap, it is not convenient and not correct.
+---
+First you need to agree on the final options: "dpmap_hybrid" and "dpmap_tree". There is a need to refine:
+1. Each "Principles" block should be clickable and collapse / expand.
+2. Creational, Structural, Behavioral - should not be on the same level as Principles and Architectural, but should be nested in "Gof Design patterns".
+3. Take your time, let's prove an acceptable and convenient look.
+
+---
+I like 2 options now.
+Let's move on.
+I have a few suggestions for further steps. But I would like to hear your suggestions for a start. What do you suggest next?
+---
+I really like your suggestions and ideas.
+I ask you to implement all your recommendations and plans step by step.
+
+My recommendation is that we work only in the directory: "2026-06-15 Design Principles & Patterns".
+1. All directories, subdirectories, directories, subdirectories should be nested in the root folder. I have already started doing this, please take a look.
+2. All links "dpmap_hybrid.html" and "dpmap_tree.html" should be linked only inside 2026-06-15 Design Principles & Patterns.
+3. It may not be a priority now, but do not forget that the "Open deep-dive ↗" functionality will need to be finalized for each of the 40 concepts
+
+---
+It is difficult for me to answer. Give me more information about each option?
+Right now I'm going with option "1 — Designed hero + reveal MP4. ", but I don't rule out that we can go back to option "3 — Hero PNG + screen-record guide. ". After option 1, we'll do 3 together.
+
+++++++++++++++++++++++++++
+
+
+
+Одне зауваження від мене (рівень 8 твоїх правил — не погоджуватись наосліп): GRASP частково перетинається з тим, що вже є. Тому єдине рішення з реальним компромісом — обсяг. Моя рекомендація — усі 9: це впізнаваний набір рівно з дев'яти, і викинути найвідоміші (Low Coupling / High Cohesion) означало б показати «GRASP без половини GRASP». Перетин уже знято через see-also.
+(Якщо колись захочеш розширювати далі — наступний кандидат це component/package-принципи Мартіна: REP/CCP/CRP + ADP/SDP/SAP. Але це окрема історія, не зараз.)
+
+----
+Що робимо далі? Наприклад можу:
+
+зробити ще один еталон — цього разу architectural концепцію (напр. MVC), щоб перевірити, що «Pattern» і весь шаблон коректно лягають не лише на принципи;
+або batch для якогось набору (Principles / GRASP / Architectural) прямо тут;
+або підкрутити щось у шаблоні (щільність p2, кольори, структуру сторінок).
+
+----
+Один нюанс деплою: папки з пробілами та & (Coupling & OO Design, Data & persistence). Пробіли кодуються в %20 (лінки вже через encodeURI — ок), а от & у шляху інколи капризує на статиці. Якщо десь PDF не відкриється — перейменуємо ці папки в URL-safe (без пробілів/&), і я оновлю шляхи. Самі мапи це не зачіпає.
+
+----
+Ще 3 поради для деплою:
+Заливай ВМІСТ цієї папки в КОРІНЬ репозиторію (щоб index.html був у корені), а не саму папку — її назва «2026-06-15 Design Principles & Patterns» має пробіли й потрапила б у URL. (Або клади в /docs і вкажи це в Pages.)
+Регістр важливий (Pages на Linux чутливий). У нас усе узгоджено — _check.js теж біжить на Linux і пройшов, отже регістр папок збігається з кодом. Не перейменовуй Creational/Structural/Behavioral/Solid/Presentation/Composition/GRASP.
+Можеш не заливати (щоб полегшити репо): _src/, _arhive/, усі *_slides_en/, linkedin/frames/, вихідні .jpeg — для роботи сайту не потрібні. Якщо заллєш — не зашкодить.
+
+----
+
+
+
+
+
+
+
+
+
+
+

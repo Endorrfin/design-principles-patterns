@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Design Principles &amp; Patterns</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0A0A0A;color:#F5F5F5;font-family:'Inter',system-ui,sans-serif}
+body{display:flex;flex-direction:column;height:100vh}
+.tabbar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#0A0A0A;border-bottom:1px solid #2A2A2A;flex:0 0 auto}
+.tabbar .logo{width:26px;height:26px;border-radius:7px;background:#FF7A00;color:#120A04;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-right:4px}
+.tabbar h1{font-size:15px;font-weight:600;margin:0 12px 0 0;font-family:'Space Grotesk','Inter',sans-serif}
+.tab{background:transparent;border:1px solid #2A2A2A;border-radius:999px;color:#9CA3AF;font-size:13px;padding:7px 16px;cursor:pointer}
+.tab:hover{border-color:#383838;color:#F5F5F5}
+.tab.on{background:#1E1E1E;border-color:#FF7A00;color:#F5F5F5}
+.hint{margin-left:auto;font-size:12px;color:#6B7280}
+.frames{flex:1 1 auto;position:relative}
+.frames iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:none;background:#0A0A0A}
+.frames iframe.on{display:block}
+</style>
+</head>
+<body>
+<div class="tabbar">
+  <span class="logo">◆</span><h1>Design Principles &amp; Patterns</h1>
+  <button class="tab" data-v="study">Study</button>
+  <button class="tab" data-v="hybrid">Cards</button>
+  <button class="tab" data-v="tree">Mind-map</button>
+  <span class="hint">interactive · 49 concepts</span>
+</div>
+<div class="frames">
+  <iframe data-v="study" src="dpmap_study.html" title="Study"></iframe>
+  <iframe data-v="hybrid" src="dpmap_hybrid.html" title="Cards"></iframe>
+  <iframe data-v="tree" src="dpmap_tree.html" title="Mind-map"></iframe>
+</div>
+<script>
+var V=['study','hybrid','tree'];
+var tabs=[].slice.call(document.querySelectorAll('.tab'));
+var frames=[].slice.call(document.querySelectorAll('.frames iframe'));
+function show(v){
+  tabs.forEach(function(t){t.classList.toggle('on',t.dataset.v===v);});
+  frames.forEach(function(f){f.classList.toggle('on',f.dataset.v===v);});
+  try{localStorage.setItem('dpmap_tab',v);}catch(e){}
+  if(location.hash.slice(1)!==v){try{history.replaceState(null,'','#'+v);}catch(e){}}
+}
+tabs.forEach(function(t){t.onclick=function(){show(t.dataset.v);};});
+var init='study',h=location.hash.slice(1);
+if(V.indexOf(h)>=0)init=h;
+else{try{var s=localStorage.getItem('dpmap_tab');if(V.indexOf(s)>=0)init=s;}catch(e){}}
+show(init);
+</script>
+</body>
+</html>

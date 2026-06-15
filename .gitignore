@@ -1,0 +1,24 @@
+# OS / editor junk
+.DS_Store
+**/.DS_Store
+Thumbs.db
+_test_ops/        # stray sandbox test dir — not part of the site
+_arhive/
+
+#Temporary — deep-dive PDFs (not finalized). Build with DPMAP_NO_DEEPDIVE=1 so the
+# "Open deep-dive" buttons show "coming soon" instead of 404. Remove these 3 lines
+# + rebuild normally (node dpmap_build.js) when the PDFs are ready, then push.
+Architectural/
+GoF_Design_Patterns/
+Principles/
+
+
+# docs
+CLAUDE.md
+
+# Optional — uncomment any of these to slim the repo.
+# They are NOT needed for the live site (nothing links to them):
+# _arhive/                 # earlier iterations
+# **/*_slides_en/          # intermediate PNG slides (the PDFs are kept)
+# linkedin/frames/         # MP4 source frames (the .mp4 is kept)
+# _src/node_modules/       # if you ever install deps inside _src
