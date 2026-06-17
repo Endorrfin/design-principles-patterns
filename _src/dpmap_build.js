@@ -80,13 +80,13 @@ body{display:flex;flex-direction:column;height:100vh}
 <body>
 <div class="tabbar">
   <span class="logo">◆</span><h1>Design Principles &amp; Patterns</h1>
-  <button class="tab" data-v="study">Study</button>
+  <button class="tab" data-v="study">Path</button>
   <button class="tab" data-v="hybrid">Cards</button>
   <button class="tab" data-v="tree">Mind-map</button>
   <span class="hint">interactive · ${NODES.length} concepts</span>
 </div>
 <div class="frames">
-  <iframe data-v="study" src="dpmap_study.html" title="Study"></iframe>
+  <iframe data-v="study" src="dpmap_study.html" title="Path"></iframe>
   <iframe data-v="hybrid" src="dpmap_hybrid.html" title="Cards"></iframe>
   <iframe data-v="tree" src="dpmap_tree.html" title="Mind-map"></iframe>
 </div>
@@ -114,7 +114,7 @@ fs.writeFileSync(path.join(OUT, 'dpmap_tree.html'), page('Design Principles & Pa
 fs.writeFileSync(path.join(OUT, 'dpmap_study.html'), page('Design Principles & Patterns — study', studyJS));
 
 console.log('Built:');
-console.log('  index.html (tabs: Study / Cards / Mind-map)');
+console.log('  index.html (tabs: Path / Cards / Mind-map)');
 console.log('  dpmap_hybrid.html');
 console.log('  dpmap_tree.html');
 console.log('  dpmap_study.html');

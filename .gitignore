@@ -2,11 +2,13 @@
 .DS_Store
 **/.DS_Store
 Thumbs.db
+.idea/
 _test_ops/        # stray sandbox test dir — not part of the site
 _arhive/
 
 # docs
 CLAUDE.md
+Design Principles & Patterns Interactive map.txt
 
 # Slim the repo — intermediate render artifacts the live site does NOT link to.
 # Already-tracked copies need a one-time `git rm -r --cached` (see commit recipe).

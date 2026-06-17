@@ -77,10 +77,10 @@ app.innerHTML = `
   <header class="bar">
     <div class="brand"><span class="logo">◆</span>
       <div><h1>Design Principles &amp; Patterns</h1>
-        <div class="sub">Study mode — walk the hierarchy, then test yourself</div></div>
+        <div class="sub">Path — walk the hierarchy, then test yourself</div></div>
     </div>
     <div class="modebar"><div class="seg">
-      <button id="m-path" class="on">Learning path</button>
+      <button id="m-path" class="on">Outline</button>
       <button id="m-cards">Flashcards</button>
     </div></div>
   </header>
