@@ -4,7 +4,7 @@
 
 const TREE_STYLE = `
 .treewrap{display:flex;height:calc(100vh - 57px)}
-.canvas{position:relative;flex:1;min-width:0;overflow:hidden;cursor:grab;background-color:var(--bg);
+.canvas{position:relative;flex:1;min-width:0;overflow:hidden;touch-action:none;cursor:grab;background-color:var(--bg);
   background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px);background-size:26px 26px}
 .canvas.grabbing{cursor:grabbing}
 .viewport{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}
@@ -37,6 +37,7 @@ const TREE_STYLE = `
   .treewrap{flex-direction:column;height:auto}
   .canvas{height:62vh}
   .treewrap .detail{width:auto;border-left:none;border-top:1px solid var(--line)}
+  .zbtn{width:42px;height:42px;font-size:19px}
 }
 `;
 document.head.insertAdjacentHTML('beforeend', '<style>' + TREE_STYLE + '</style>');

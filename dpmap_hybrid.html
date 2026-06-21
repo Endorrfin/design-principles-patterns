@@ -131,6 +131,12 @@ a{color:var(--accent2)}
   .detail{position:static;width:auto;max-height:none;align-self:stretch}
   .search{width:150px}
 }
+@media (max-width:480px){
+  .bar{padding:9px 12px}
+  .content{padding:12px;gap:14px}
+  .families{padding:10px 12px}
+  .fam{padding:8px 13px}
+}
 `;
 
 const GRP = {}; GROUPS.forEach(g => GRP[g.id] = g);

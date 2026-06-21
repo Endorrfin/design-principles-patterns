@@ -68,7 +68,8 @@ const STUDY_STYLE = `
 .fc-done{align-items:center;justify-content:center;text-align:center}
 .fc-done .big{font-size:34px;font-weight:600;color:var(--tx)}
 .fc-done .sub{color:var(--tx2);margin:8px 0 18px}
-@media (max-width:820px){ .pathgrid{flex-direction:column} .pathlist{width:auto;max-height:none} }
+@media (max-width:820px){ .pathgrid{flex-direction:column} .pathlist{width:auto;max-height:none}
+  .seg button{padding:11px 16px} .pnav button,.pbtn{padding:10px 13px} .studywrap{padding:14px} }
 `;
 document.head.insertAdjacentHTML('beforeend', '<style>' + STUDY_STYLE + '</style>');
 
